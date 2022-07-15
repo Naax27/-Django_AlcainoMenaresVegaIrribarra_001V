@@ -1,0 +1,71 @@
+{%extends 'base.html'%}
+{%load static%}
+
+{%block titulo%}Nosotros - AMV{%endblock%}
+
+{%block contenido%}
+    <!-- HISTORIA MISION VISION  -->
+    <div class="row justify-content-center mx-2 my-6">
+      <div align="center" class="col-12 col-md-8 col-xl-7">
+        <h2><strong>HISTORIA</strong></h2>
+        <p class="mb-3">Desde pequeños nuestro contacto con la naturaleza fue instantaneo,sentir que podiamos conectar
+          con la tierra el poder hablar con las plantas era algo extraño para nosotros, esto solo se podia
+          conseguir al sembrar una semilla,al regar el jardin o simplemente andar a pies descalzo por el cesped.</p>
+        <img src="{%static 'img/nosotros.svg'%}" class="img-fluid ilus-nosotros">
+      </div>
+    </div>
+
+    <div class="row justify-content-center mx-2 mb-6">
+      <div align="center" class="col-12 col-md-8 col-xl-7">
+        <h2><strong>VISIÓN</strong></h2>
+        <p class="mb-3">Buscamos reecontrar a nuestros clientes con la naturaleza , enseñando distintas tecnicas
+          para cultivas y cuidar nuestro medio ambiente, ocupando productos que ayuden a sustentar nuestro
+          planeta y contibuir con el cambio climatico.</p>
+        <img src="{%static 'img/vision.svg'%}" class="img-fluid ilus-nosotros">
+      </div>
+    </div>
+
+    <div class="row justify-content-center mx-2 mb-6">
+      <div align="center" class="col-12 col-md-8 col-xl-7">
+        <h2><strong>MISIÓN</strong></h2>
+        <p class="mb-3">Nuestra mision es entregar distintas herramientas a nuestros clientes, ayudando tambien
+          al medio ambiente entregando información y calidad de nuestros productos y servicio, logrando que
+          mas personas ayuden a crear un mundo verde.</p>
+        <img src="{%static 'img/mision.svg'%}" class="img-fluid ilus-nosotros">
+      </div>
+    </div>
+    <!-- /HISTORIA MISION VISION  -->
+
+    <!-- VIDEO RELACIONADO -->
+    <div class="row justify-content-center mt-5 my-6">
+      <div class="col-10 col-md-8 col-xl-7 contenedor-vid">
+        <iframe src="https://www.youtube.com/embed/O43FbUHQpcg" allowfullscreen></iframe>
+      </div>
+    </div>
+    <!-- /VIDEO RELACIONADO -->
+
+    <!-- FOTOS INTEGRANTES -->
+    <div class="row justify-content-center px-5 mb-5">
+      <div class="sec-miembros col-9 col-md-7 col-lg-3">
+        <img src="{%static 'img/nacho.jpg'%}">
+        <p class="text-center h5 fw-bold mt-3 mb-0">Ignacio Alcaino</p>
+        <p class="text-center text-muted">Jefe de proyecto</p>
+      </div>
+      <div class="sec-miembros col-9 col-md-7 col-lg-3">
+        <img class="img-fluid" src="{%static 'img/catita.jpg'%}">
+        <p class="text-center h5 fw-bold mt-3 mb-0">Catalina Menares</p>
+        <p class="text-center text-muted">Desarrollo</p>
+      </div>
+      <div class="sec-miembros col-9 col-md-7 col-lg-3">
+        <img class="img-fluid" src="{%static 'img/pancho3.jpeg'%}">
+        <p class="text-center h5 fw-bold mt-3 mb-0">Francisco Vega</p>
+        <p class="text-center text-muted">Desarrollo</p>
+      </div>
+      <div class="sec-miembros col-9 col-md-7 col-lg-3">
+        <img class="img-fluid" src="{%static 'img/paulo.jpeg'%}">
+        <p class="text-center h5 fw-bold mt-3 mb-0">Paulo Irribarra </p>
+        <p class="text-center text-muted">Desarrollo</p>
+      </div>
+    </div>
+    <!-- /FOTOS INTEGRANTES -->
+    {%endblock%}

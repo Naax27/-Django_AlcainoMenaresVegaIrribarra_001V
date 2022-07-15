@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{%block titulo%}Agregar Producto - AMV{%endblock%}
+{% block contenido %}
+
+<div class="w-50 mx-auto py-5">
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+
+        <button class="btn btn-success mt-3" type="submit">Guardar</button>
+    </form>
+
+</div>
+{% endblock %}

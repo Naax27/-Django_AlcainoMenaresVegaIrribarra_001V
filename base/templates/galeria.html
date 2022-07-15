@@ -1,0 +1,147 @@
+{%extends 'base.html'%}
+{%load static%}
+
+{%block titulo%}Galeria - AMV{%endblock%}
+
+{%block contenido%}
+    <!-- NAVBAR DE GALERIA -->
+    <h1 class="text-center mt-5 mb-4">NUESTRA GALERIA</h1>
+    <nav>
+      <ul class="d-flex mx-auto text-center nav-galeria">
+        <li class="text-muted fw-normal">HERRAMIENTAS</li>
+        <li class="nav-activo-gallery">GALERIA</li>
+        <li class="text-muted fw-normal">ARBOLES FRUTALES</li>
+      </ul>
+    </nav>
+    <!-- !NAVBAR DE GALERIA -->
+    <div class="row justify-content-center mt-3">
+      <!-- CUADRICULA DE IMAGENES/GALERIA -->
+      <section class="galeria mb-5">
+        <div class="row justify-content-center mt-3">
+          <a class="col-md-6 col-xl-4" href="#image1">
+            <img src="{%static 'img/ngaleria/rosa.jpg'%}" class="mb-4">
+          </a>
+
+          <a class="col-md-6 col-xl-4" href="#image2">
+            <img src="{%static 'img/ngaleria/pala.jpg'%}" class="mb-4">
+          </a>
+
+          <a class="col-md-6 col-xl-4" href="#image3">
+            <img src="{%static 'img/ngaleria/guantes-podar.jpg'%}" class="mb-4">
+          </a>
+
+          <a class="col-md-6 col-xl-4" href="#image4">
+            <img src="{%static 'img/ngaleria/carretilla.jpg'%}" class="mb-4">
+          </a>
+
+          <a class="col-md-6 col-xl-4" href="#image5">
+            <img src="{%static 'img/ngaleria/jardin.jpg'%}" class="mb-4">
+          </a>
+
+          <a class="col-md-6 col-xl-4" href="#image6">
+            <img src="{%static 'img/ngaleria/led.jpg'%}" class="mb-4">
+          </a>
+      </section>
+    </div>
+    <!-- /CUADRICULA DE IMAGENES/GALERIA -->
+    <!-- imagen 1 -->
+    <article class="light-box" id="image1">
+      <a href="#image6" class="next"><i class="bi bi-arrow-left-circle-fill"></i></a>
+      <!-- contenido de la tarjeta -->
+      <div class="row card-light-box">
+        <img src="{%static 'img/ngaleria/rosa.jpg'%}" class="img-fluid col-12 col-lg-8 p-0 m-0">
+        <div class="col-12 col-lg-4 p-4 position-relative">
+          <h2 class="mb-3">Rosas</h2>
+          <p class="text-justify">Las rosas son todo un género de arbustos espinosos, ampliamente conocidos por
+            la belleza de sus flores, de fragancia muy característica. Sus flores forman capullos de pétalos de varios
+            tonos, aunque las rosas más típicas y clásicas son las de color rojo intenso. Es costumbre en muchos países
+            regalarlas como símbolo de amor romántico, aunque dependiendo del tipo y el color de la rosa y de la
+            cultura, pueden tener distintos significados.</p>
+          <p class="gal-precio mt-4">$14.990 c/u</p>
+        </div>
+      </div>
+      <!-- contenido de la tarjeta -->
+      <a href="#image2" class="next"><i class="bi bi-arrow-right-circle-fill"></i></a>
+      <a href="#" class="close"><i class="bi bi-x-circle-fill"></i></a>
+    </article>
+    <!-- imagen 2 -->
+    <article class="light-box" id="image2">
+      <a href="#image1" class="next"><i class="bi bi-arrow-left-circle-fill"></i></a>
+      <div class="row card-light-box">
+        <img src="{%static 'img/ngaleria/pala.jpg'%}" class="img-fluid col-12 col-lg-8 p-0 m-0">
+        <div class="col-12 col-lg-4 p-4">
+          <h2 class="mb-3">Palas para agricultura</h2>
+          <p class="text-justify">Las palas para el trabajo en la tierra cuentan con una placa con terminación
+            redondeada y algo puntiaguda (como un filo) para favorecer la tarea de excavación. En algunos casos la parte
+            inferior es plana para marcar surcos en la tierra y delimitar el espacio a excavar.</p>
+          <p class="gal-precio mt-4">$19.990 c/u</p>
+        </div>
+      </div>
+      <a href="#image3" class="next"><i class="bi bi-arrow-right-circle-fill"></i></a>
+      <a href="#" class="close"><i class="bi bi-x-circle-fill"></i></a>
+    </article>
+    <!-- imagen 3 -->
+    <article class="light-box" id="image3">
+      <a href="#image2" class="next"><i class="bi bi-arrow-left-circle-fill"></i></a>
+      <div class="row card-light-box">
+        <img src="{%static 'img/ngaleria/guantes-podar.jpg'%}" class="img-fluid col-12 col-lg-8 p-0 m-0">
+        <div class="col-12 col-lg-4 p-4">
+          <h2 class="mb-3">Guantes para podar</h2>
+          <p class="text-justify">Los guantes largos hasta el codo son perfectos para podar y escardar plantas
+            con pinchos como los rosales para evitar pincharnos las manos y el antebrazo.</p>
+          <p class="gal-precio mt-4">$9.990 c/u</p>
+        </div>
+      </div>
+      <a href="#image4" class="next"><i class="bi bi-arrow-right-circle-fill"></i></a>
+      <a href="#" class="close"><i class="bi bi-x-circle-fill"></i></a>
+    </article>
+    <!-- imagen 4 -->
+    <article class="light-box" id="image4">
+      <a href="#image3" class="next"><i class="bi bi-arrow-left-circle-fill"></i></a>
+      <div class="row card-light-box">
+        <img src="{%static 'img/ngaleria/carretilla.jpg'%}" class="img-fluid col-12 col-lg-8 p-0 m-0">
+        <div class="col-12 col-lg-4 p-4">
+          <h2 class="mb-3">Carretilla</h2>
+          <p class="text-justify">
+            La carretilla es un pequeño vehículo, diseñado para ser propulsado por una sola persona y utilizado para el
+            transporte a mano de carga. La carretilla de una sola rueda frontal está diseñada para distribuir el peso de
+            la carga entre la rueda y el trabajador.</p>
+          <p class="gal-precio mt-4">$44.990 c/u</p>
+        </div>
+      </div>
+      <a href="#image5" class="next"><i class="bi bi-arrow-right-circle-fill"></i></a>
+      <a href="#" class="close"><i class="bi bi-x-circle-fill"></i></a>
+    </article>
+    <!-- imagen 5 -->
+    <article class="light-box" id="image5">
+      <a href="#image4" class="next"><i class="bi bi-arrow-left-circle-fill"></i></a>
+      <div class="row card-light-box">
+        <img src="{%static 'img/ngaleria/jardin.jpg'%}" class="img-fluid col-12 col-lg-8 p-0 m-0">
+        <div class="col-12 col-lg-4 p-4">
+          <h2 class="mb-3">Servicios de jardineria</h2>
+          <p class="text-justify">Contamos con distinto servicios de jardineria, para cumplir tus sueños en el
+            paisajismo que deseas, nosotros podemos hacerlo realidad, contamos con jardineros de alto estandares para
+            tus necesidades.</p>
+          <p class="gal-precio mt-4">Desde: $19.990</p>
+        </div>
+      </div>
+      <a href="#image6" class="next"><i class="bi bi-arrow-right-circle-fill"></i></a>
+      <a href="#" class="close"><i class="bi bi-x-circle-fill"></i></a>
+    </article>
+    <!-- imagen 6 -->
+    <article class="light-box" id="image6">
+      <a href="#image5" class="next"><i class="bi bi-arrow-left-circle-fill"></i></a>
+      <div class="row card-light-box">
+        <img src="{%static 'img/ngaleria/led.jpg'%}" class="img-fluid col-12 col-lg-8 p-0 m-0">
+        <div class="col-12 col-lg-4 p-4">
+          <h2 class="mb-3">Luz solar</h2>
+          <p class="text-justify">Las características principales de las luces solares LED es que son pequeñas,
+            se entierran en la suelo y se alimentan del sol, además son un modo muy práctico de contar con iluminación
+            en el patio o jardín sin que se necesiten metros de cable ni enchufes a la mano.</p>
+          <p class="gal-precio mt-4">$990 c/u</p>
+        </div>
+      </div>
+      <a href="#image1" class="next"><i class="bi bi-arrow-right-circle-fill"></i></a>
+      <a href="#" class="close"><i class="bi bi-x-circle-fill"></i></a>
+    </article>
+  {%endblock%}

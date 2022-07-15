@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block titulo %}Tienda - AMV{% endblock %}
+
+{% block contenido %}
+<div class="row">
+    <div class="panel-filtros col-12 col-md-3 col-xxl-2 py-5 d-none d-md-block">
+        {% if request.user.is_staff%}
+        <a href="/crear-producto" class="btn btn-success text-white mb-2 d-block mx-auto">Añadir Producto</a>
+        {% endif %}
+        <h2 class="mt-4">Categorias</h2>
+        <ul>
+            <li>
+                <a href="{%url 'categoria' 'all'%}">Todos</a>
+            </li>
+            {% for categ in categorias%}
+            <li>
+                <a href="{%url 'categoria' categ.id%}">{{categ.nombre}}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    
+    <div class="contenedor-productos col-12 col-md-9 col-xxl-10 py-5">
+        {% if  productos.count == 0%}
+            <p class="msg-no-resultado">No se encontraron resultados</p>
+        {% endif %}
+        
+        {% for producto in productos %}
+            <div class="card-tienda__contenedor">
+                <img src="{%static 'img/'%}{{producto.imagen}}" class="card-tienda__img-producto">
+                <h3 class="card-tienda__nombre">{{producto.nombre}}</h3>
+                <p class="card-tienda__desc">{{producto.descripcion}}</p>
+                <p class="text-muted">stock: {{producto.stock}}</p>
+                <div class="d-flex">
+                    <div class="d-flex flex-column">
+                        <p class="m-0 text-muted">Precio</p>
+                        <p class="fw-bold fs-6">${{ producto.precio }}</p>
+                    </div>
+                    {% if request.user.is_staff%}
+                    <div class="d-flex w-100 justify-content-end">
+                        <a href="/del-producto/{{producto.id}}" class="btn__AMV card-tienda__btn-del align-self-center ms-2">Borrar</a>
+                        <a href="{% url 'mod-producto' producto.id%}" class="btn__AMV card-tienda__btn-mod align-self-center text-black ms-2">Editar</a>
+                    </div>
+                    {% else %}
+                    <div class="d-flex w-100 justify-content-end">
+                        {%if request.user.is_authenticated%}
+                        <a href="" class="btn__AMV card-tienda__btn-add align-self-center ms-2">Agregar al Carro</a>
+                        {%else%}
+                        <a href="{%url 'login'%}" class="btn__AMV card-tienda__btn-add align-self-center ms-2">Agregar al Carro</a>
+                        {% endif %}	
+                    </div>
+                    {% endif %}	
+                </div>
+            </div>
+    {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

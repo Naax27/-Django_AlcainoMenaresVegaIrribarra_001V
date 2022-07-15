@@ -1,0 +1,171 @@
+{%extends 'base.html'%}
+{%load static%}
+
+{%block titulo%}Pagina Principal - AMV{%endblock%}
+
+{%block contenido%}
+    <!-- carousel -->
+    <div class="row justify-content-center mt-5">
+      <div class="col-md-10">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active bg"
+              aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+              aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+              aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner" style="border-radius: 6px;">
+            <div class="carousel-item active">
+              <img src="{%static 'img/carrusel-1-movil.jpg'%}" class="w-100 d-block" id="carrusel1"
+                alt="ofertas de articulos de jardineria">
+            </div>
+            <div class="carousel-item">
+              <img src="{%static 'img/carrusel-2-movil.jpg'%}" class="w-100 d-block" id="carrusel2"
+                alt="evento jardineros en santiago">
+            </div>
+            <div class="carousel-item">
+              <img src="{%static 'img/carrusel-movil-3.jpg'%}" class="w-100 d-block" id="carrusel3"
+                alt="ofertas de articulos de jardineria">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- /carousel -->
+    <!-- categorias -->
+    <div class="row justify-content-center mt-5">
+      <div class="col-10">
+        <div class="d-flex flex-wrap justify-content-around justify-content-xl-between">
+          <div class="categ-inicio">
+            <a class="text-decoration-none" href="{%url 'categoria' '2'%}">
+              <img src="{%static 'img/categ1.jpg'%}" class="img-fluid">
+              <p class="text-center fw-bold mt-2 text-black">INTERIOR</p>
+            </a>
+          </div>
+          <div class="categ-inicio">
+            <a class="text-decoration-none" href="{%url 'categoria' '1'%}">
+              <img src="{%static 'img/categ2.jpg'%}" class="img-fluid">
+              <p class="text-center fw-bold mt-2 text-black">EXTERIOR</p>
+            </a>
+          </div>
+          <div class="categ-inicio">
+            <a class="text-decoration-none" href="{%url 'categoria' '4'%}">
+              <img src="{%static 'img/categ3.jpg'%}" class="img-fluid">
+              <p class="text-center fw-bold mt-2 text-black">JARDINERIA</p>
+            </a>
+          </div>
+          <div class="categ-inicio">
+            <a class="text-decoration-none" href="{%url 'categoria' '3'%}">
+              <img src="{%static 'img/categ4.jpg'%}" class="img-fluid">
+              <p class="text-center fw-bold mt-2 text-black">FLORES</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /categorias -->
+    <div class="row justify-content-center mt-4">
+      <!-- articulos -->
+      <h2 class="text-center mb-4">ARTICULOS DE LA SEMANA</h2>
+      <div class="col-12 col-md-8">
+        <div class="card mb-5 ms-3 me-3 card-articulo">
+          <div class="row g-0">
+            <div class="col-xl-4">
+              <img src="{%static 'img/articulo1.jpg'%}" class="col-xl-4 img-fluid img-articulo d-block pt-xl-0" alt="...">
+            </div>
+            <div class="col-xl-8">
+              <div class="card-body">
+                <h5 class="card-title text-center text-xl-start">Las huertas familiares reducen las pérdidas
+                  alimentarias</h5>
+                <p class="card-text">La proximidad de la huerta al hogar permite una reducción notable del riesgo de
+                  perdidas alimentarias, mediante la posibilidad de un mayor control de los predadores y ladrones. En
+                  los sistemas de producción familiar, la mayor parte de los productos de base provienen generalmente de
+                  una o varias parcelas del mismo cultivo. En general, esas parcelas se encuentran bastante alejadas,
+                  obligando a un miembro de la familia a pasar la noche en una cabaña improvisada para vigilar las
+                  cosechas. Contrariamente a las huertas familiares, los cultivos realizados en campo abierto se
+                  practican en [...] <a href="https://www.fao.org/3/y5112s/y5112s04.htm">(ver mas)</a></p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="card ms-3 me-3 card-articulo">
+          <div class="row g-0 flex-row-reverse">
+            <div class="col-xl-4">
+              <img src="{%static 'img/articulo2.webp'%}" class="col-xl-4 img-fluid img-articulo d-block m-auto pt-xl-0" alt="...">
+            </div>
+            <div class="col-xl-8">
+              <div class="card-body">
+                <h5 class="card-title text-center text-xl-start">Consejos para tener una rosaleda en casa</h5>
+                <p class="card-text">¿Sabías que el género Rosa está formado por unas 100 especies? La mayor parte son
+                  originarias de Asia, aunque algunas son nativas de Europa, Norteamérica y África noroccidental. El uso
+                  principal de las rosas es el ornamental, ya que su belleza y fragancia la convierten en una flor
+                  perfecta para decorar cualquier espacio, evento o celebración.
+
+                  Además, las rosas son muy apreciadas en cosmética y perfumería, gracias a su aceite esencial y a las
+                  propiedades que atesora. Incluso la medicina [...] <a
+                    href="https://www.florestore.com/flores-a-domicilio/cuidados-de-las-rosas/">(ver mas)</a></p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /articulos -->
+    <div class="row justify-content-center mt-3">
+      <!-- productos destacados -->
+      <div class="col-12 col-md-8 mb-4">
+        <div class="row justify-content-around mt-5">
+          <h2 class="text-center mb-4">PRODUCTOS DESTACADOS</h2>
+          <div class="card-tienda col-5 col-xxl-3 mb-4 prod-destacado">
+            <img src="{%static 'img/productos/prod1.jpg'%}" class="img-card-tienda pt-3" alt="...">
+            <div class="card-body">
+              <p class="fw-bold mb-1">Tierra para macetero 15 lts saco</p>
+              <p class="card-text">Esta mezcla permitirá que tus plantas se vean saludables, fuertes y vitales. </p>
+              <p class="text-center mb-0 text-success fw-bold">$3690</p>
+            </div>
+          </div>
+          <div class="card-tienda col-5 col-xxl-3 mb-4 prod-destacado">
+            <img src="{%static 'img/productos/prod2.jpg'%}" class="img-card-tienda pt-3" alt="...">
+            <div class="card-body">
+              <p class="fw-bold mb-1">Tierra de hoja para jardín 80 lts saco</p>
+              <p class="card-text">La tierra de hojas 80 litros Anasac es perfecta para mantener tus plantas y siembras
+                en buen estado.</p>
+              <p class="text-center mb-0 text-success fw-bold">$8790</p>
+            </div>
+          </div>
+          <div class="card-tienda col-5 col-xxl-3 mb-4 prod-destacado">
+            <img src="{%static 'img/productos/prod3.jpg'%}" class="img-card-tienda pt-3" alt="...">
+            <div class="card-body">
+              <p class="fw-bold mb-1">Huerto madera 3 niveles recto</p>
+              <p class="card-text">Huerta urbana, macetero, cantero para exteriores en madera maciza.</p>
+              <p class="text-center mb-0 text-success fw-bold">$49990</p>
+            </div>
+          </div>
+          <div class="card-tienda col-5 col-xxl-3 mb-4 prod-destacado">
+            <img src="{%static 'img/productos/prod4.jpg'%}" class="img-card-tienda pt-3" alt="...">
+            <div class="card-body">
+              <p class="fw-bold mb-1">Mix Suculentas 6 cm CT10 Unidad</p>
+              <p class="card-text">Mix de 6 suculentas de distintas variedades y especies elegidas al azar según
+                temporada.</p>
+              <p class="text-center mb-0 text-success fw-bold">$1990</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /productos destacados -->
+    </div>
+  {%endblock%}

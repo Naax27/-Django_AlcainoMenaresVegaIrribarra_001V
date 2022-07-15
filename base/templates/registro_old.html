@@ -1,0 +1,219 @@
+{%extends 'base.html'%}
+{%load static%}
+
+
+{%block js_amv0%}
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9Vrz-lVrLStAmJR1ndfWsxDHUn7F7M8M&callback=initAutocomplete&libraries=places&v=weekly"
+    defer></script>
+{%endblock%}
+
+{%block titulo%}Registro - AMV{%endblock%}
+
+{%block contenido%}
+  {% if messages %}
+    <ul class="mt-5 ms-5">
+      {% for message in messages %}
+        <li class="text-danger list-unstyled fs-4">{{message}}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+    <h1 class="text-center my-5">REGISTRO</h1>
+    <form id="registro" class="mx-auto w-75 mb-4" method="POST">
+      {% csrf_token %}
+      <div class="row">
+        <h2 class="fs-4 mb-0">Cuenta de Usuario</h2>
+        <p class="mt-2">Campos marcados con <span class="text-danger">*</span> deben ser llenados obligatoriamente.</p>
+
+        <!-- CAMPO Usuario -->
+        <div class="formulario__grupo col-md-6">
+
+          <label for="nom">Usuario <span class="text-danger">*</span></label>
+          <div class="formulario__grupo-input">
+            <input id="usuario" name="user" class="form-control formulario__input" placeholder="Ingresa tu usuario"
+              required maxlength="50" autofocus>
+            <i class="formulario__icono-estado"></i>
+          </div>
+          {% comment %} <div class="formulario__mensajes-error-pass">
+            <p class="my-2 text-black">La contraseña debe contener lo siguiente:</p>
+            <div class="formulario__contenedor-errores" data-amv-error="user">
+              <p><span></span> Mínimo 8 Caracteres</p>
+              <p><span></span> Mínimo 1 minúscula</p>
+              <p><span></span> Mínimo 1 Mayúscula</p>
+              <p><span></span> Mínimo 1 Número</p>
+            </div>
+          </div> {% endcomment %}
+        </div>
+
+        <!-- CAMPO CORREO -->
+        <div class="formulario__grupo col-xs-12 col-md-6">
+
+          <label for="email">Correo <span class="text-danger">*</span></label>
+          <div class="formulario__grupo-input">
+            <input id="email" name="email" class="form-control formulario__input"
+              placeholder="Ejemplo: f.amiv@gmail.com " required>
+            <i class="formulario__icono-estado"></i>
+          </div>
+          <div class="formulario__mensajes-error" data-amv-error="email">
+            <p>Introduzca un correo valido.</p>
+          </div>
+        </div>
+
+        <!-- CAMPO CONTRASEÑA -->
+        <div class="formulario__grupo  col-md-6">
+
+          <label for="psw0">Contraseña <span class="text-danger">*</span></label>
+          <div class="formulario__grupo-input no-pseudo d-flex">
+            <input type="password" id="psw0" name="psw0" class="formulario__input form-control" required>
+            <div class="d-flex">
+              <button id="toggle_password_vis0" class="btn formulario__btn-toggle-pass" type="button" tabindex="-1">
+                <i class="bi bi-eye-fill icon"></i></button>
+            </div>
+          </div>
+
+
+          <div class="formulario__mensajes-error-pass">
+            <p class="my-2 text-black">La contraseña debe contener lo siguiente:</p>
+            <div class="formulario__contenedor-errores" data-amv-error="pass">
+              <p><span></span> Mínimo 8 Caracteres</p>
+              <p><span></span> Mínimo 1 minúscula</p>
+              <p><span></span> Mínimo 1 Mayúscula</p>
+              <p><span></span> Mínimo 1 Número</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- CONFIRMACION CONTRASEÑA -->
+        <div class="formulario__grupo col-xs-12 col-md-6">
+
+          <label for="psw1">Confirmar contraseña <span class="text-danger">*</span></label>
+
+          <div class="formulario__grupo-input no-pseudo d-flex">
+            <input type="password" id="psw1" name="psw1" Class="formulario__input form-control" required>
+            <div class="d-flex">
+              <button id="toggle_password_vis1" class="btn formulario__btn-toggle-pass no-pseudo" type="button" tabindex="-1">
+                <i class="bi bi-eye-fill icon1"></i> </button>
+            </div>
+          </div>
+
+          <div class="formulario__mensajes-error" data-amv-error="confirmar_pass">
+            <p>Las contraseñas no coinciden.</p>
+          </div>
+        </div>
+
+        
+
+        <!-- DIVISION Y TITULO DIRECCION -->
+        <hr class="mt-5 mb-4">
+        <h2 class="fs-4">Información Personal</h2>
+
+        <!-- CAMPO RUT -->
+        <div class="formulario__grupo col-xs-12 col-md-6">
+
+          <div class="d-flex justify-content-between">
+            <label for="rut">Rut <span class="text-danger">*</span></label>
+            <span class="fs-7 fst-italic text-black">Sin puntos ni guión</span>
+          </div>
+
+          <div class="formulario__grupo-input">
+            <input id="rut" name="rut" class="formulario__input form-control" placeholder="Ingresa tu Rut" required
+              maxlength="10">
+            <i class="formulario__icono-estado"></i>
+          </div>
+
+          <div class="formulario__mensajes-error" data-amv-error="rut">
+            <p>RUT Incompleto</p>
+            <p>RUT Inválido</p>
+          </div>
+        </div>
+
+        <!-- CAMPO NOMBRE -->
+        <div class="formulario__grupo col-md-6">
+
+          <label for="nom">Nombre <span class="text-danger">*</span></label>
+          <div class="formulario__grupo-input">
+            <input id="nom" name="nom" class="form-control formulario__input" placeholder="Ingresa tu nombre completo"
+              required maxlength="50">
+            <i class="formulario__icono-estado"></i>
+          </div>
+          <div class="formulario__mensajes-error" data-amv-error="nom">
+            <p>Ingresa un nombre válido.</p>
+          </div>
+        </div>
+
+
+        <!-- CAMPO FONO -->
+        <div class="formulario__grupo col-xs-12 col-md-6">
+
+          <div class="d-flex justify-content-between">
+            <label for="fon">Teléfono<span class="text-danger">*</span></label>
+            <span class="fs-7 fst-italic text-black">9 Números</span>
+          </div>
+
+          <div class="formulario__grupo-input">
+            <input id="fon" name="fon" inputmode="numeric" class="form-control formulario__input"
+              placeholder="Ingresa tu teléfono" required minlength="9" maxlength="9">
+            <i class="formulario__icono-estado"></i>
+          </div>
+
+          <div class="formulario__mensajes-error" data-amv-error="fono">
+            <p>Introduzca un telefono valido.</p>
+          </div>
+        </div>
+
+        <hr class="mt-5 mb-4">
+        <h2 class="fs-4">Dirección de Despacho</h2>
+        <!-- CAMPO BUSCAR DIRECCION CON API -->
+        <div class="formulario__grupo col-xs-12 col-md-12">
+
+          <label for="ship-address">Buscar dirección <span class="text-danger">*</span></label>
+          <input id="ship-address" name="ship-address" class="form-control" placeholder="Escribe aqui para buscar tu dirección">
+        </div>
+
+        <!-- CAMPO DIRECCION CON AUTOCOMPLETADO -->
+        <div class="formulario__grupo col-xs-12 col-md-6">
+
+          <label for="route">Dirección <span class="text-danger">*</span></label>
+          <input id="route" name="route" class="form-control" required>
+        </div>
+
+        <!-- CAMPO NUMERO CON AUTOCOMPLETADO -->
+        <div class="formulario__grupo col-xs-12 col-md-6">
+
+          <label for="street_number">Número</label>
+          <input id="street_number" name="street_number" class="form-control">
+        </div>
+
+        <!-- CAMPO COMUNA CON AUTOCOMPLETADO -->
+        <div class="formulario__grupo col-xs-12 col-md-6">
+
+          <label for="locality">Comuna <span class="text-danger">*</span></label>
+          <input id="locality" name="locality" class="form-control" required>
+        </div>
+
+        <!-- CAMPO REGION CON AUTOCOMPLETADO -->
+        <div class="formulario__grupo col-xs-12 col-md-6">
+
+          <label for="state">Region <span class="text-danger">*</span></label>
+          <input id="state" name="state" class="form-control" required>
+        </div>
+
+        <!-- CAMPO BOTON ENVIAR  -->
+        <div class="ms-3 mt-4 mb-4 form-check">
+          <input type="checkbox" class="form-check-input" id="terminos-condiciones" required>
+          <label class="form-check-label" for="terminos-condiciones"><span class="text-danger">*</span> Acepto los
+            terminos y condiciones.</label>
+        </div>
+        <div>
+
+          <button type="submit" class="btn btn-primary btn-verde mb-4">Enviar</button>
+        </div>
+
+      </div>
+    </form>
+    {%endblock%}
+
+{%block js_amv1%}
+  <script src="{%static 'js/script-registro.js'%}"></script>
+{%endblock%}

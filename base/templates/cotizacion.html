@@ -1,0 +1,134 @@
+{%extends 'base.html'%}
+{%load static%}
+{%block js_amv0%}
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+{%endblock%}
+
+{%block titulo%}Cotiza - AMV{%endblock%}
+
+{%block contenido%}
+<form class="row justify-content-center mx-2 my-6" id="formularioCotizacion">
+  <h1 class="text-center fs-1 mt-3">Formulario de cotización</h1>
+
+  <!--Grupo :Nombre-->
+  <div class="formulario__grupo col-md-7">
+
+    <label for="nom">Nombre <span class="text-danger">*</span></label>
+    <div class="formulario__grupo-input">
+      <input id="nom" name="nom" class="form-control formulario__input" placeholder="Ingresa tus nombres" required
+        maxlength="50" autofocus>
+      <i class="formulario__icono-estado"></i>
+    </div>
+    <div class="formulario__mensajes-error" data-amv-error="nom">
+      <p>Ingrese un nombre válido.</p>
+    </div>
+  </div>
+
+  <!--Grupo :Apellido -->
+  <div class="formulario__grupo col-md-7">
+
+    <label for="ape">Apellido <span class="text-danger">*</span></label>
+    <div class="formulario__grupo-input">
+      <input id="ape" name="ape" class="form-control formulario__input" placeholder="Ingresa tus apellidos" required
+        maxlength="50">
+      <i class="formulario__icono-estado"></i>
+    </div>
+    <div class="formulario__mensajes-error" data-amv-error="ape">
+      <p>Ingrese un apellido válido.</p>
+    </div>
+  </div>
+
+  <!--Grupo :correo electronico -->
+  <div class="formulario__grupo col-md-7">
+
+    <label for="email">Correo <span class="text-danger">*</span></label>
+    <div class="formulario__grupo-input">
+      <input id="email" name="email" class="form-control formulario__input" placeholder="ej: diego@mail.com " required>
+      <i class="formulario__icono-estado"></i>
+    </div>
+    <div class="formulario__mensajes-error" data-amv-error="email">
+      <p>Ingrese un correo valido.</p>
+    </div>
+  </div>
+
+  <!--Grupo :numero de telefono -->
+  <div class="formulario__grupo col-md-7">
+
+    <div class="d-flex justify-content-between">
+      <label for="fon">Teléfono<span class="text-danger">*</span></label>
+      <span class="fs-7 fst-italic text-black">9 Números</span>
+    </div>
+
+    <div class="formulario__grupo-input">
+      <input id="fon" name="fon" inputmode="numeric" class="form-control formulario__input"
+        placeholder="Ingresa tu teléfono" required minlength="9" maxlength="9">
+      <i class="formulario__icono-estado"></i>
+    </div>
+
+    <div class="formulario__mensajes-error" data-amv-error="fono">
+      <p>Ingrese un telefono valido.</p>
+    </div>
+  </div>
+
+
+  <!--Grupo :nombre de cuidad -->
+  <div class="formulario__grupo col-md-7">
+
+    <label for="ciudad">Ciudad <span class="text-danger">*</span></label>
+    <div class="formulario__grupo-input">
+      <input id="ciudad" name="ciudad" class="form-control formulario__input" placeholder="Ingresa tu Ciudad" required>
+      <i class="formulario__icono-estado"></i>
+    </div>
+    <div class="formulario__mensajes-error" data-amv-error="ciudad">
+      <p>Introduzca su ciudad.</p>
+    </div>
+  </div>
+  <!--Grupo :nombre de comuna -->
+  <div class="formulario__grupo col-md-7">
+
+    <label for="comuna">Comuna <span class="text-danger">*</span></label>
+    <div class="formulario__grupo-input">
+      <input id="comuna" name="comuna" class="form-control formulario__input" placeholder="Ingresa tu Comuna" required>
+      <i class="formulario__icono-estado"></i>
+    </div>
+    <div class="formulario__mensajes-error" data-amv-error="comuna">
+      <p>Introduzca su comuna.</p>
+    </div>
+  </div>
+
+
+
+  <div class="col-md-7 mt-4">
+    <label class="mb-2" for="select_1">Selecciona una Categoria <span class="text-danger">*</span></label>
+    <select class="form-select" id="select_1" required>
+      <option value="" selected disabled>**Categorias**</option>
+      <option>Jardineria</option>
+      <option>Flores</option>
+      <option>Herramientas</option>
+      <option>Arboles Frutales</option>
+    </select>
+  </div>
+
+  <div class="formulario__grupo col-md-7">
+    <label for="consulta">Escriba su consulta <span class="text-danger">*</span></label>
+    <textarea class="form-control formulario__text-area" id="consulta" rows="6" required></textarea>
+    <p>Texto demasiado corto</p>
+  </div>
+
+  <div class="col-md-7">
+    <div class="formulario__grupo">
+      <label for="cbxTerminos">
+        <input type="checkbox" class="me-2" name="" id="cbxTerminos" required>
+        Acepto los terminos y condiciones
+      </label>
+
+    </div>
+    <button class="btn btn-verde col-3 mt-3" id="btn-cotizacion" type="submit">Enviar</button>
+  </div>
+
+</form>
+{%endblock%}
+
+{%block js_amv1%}
+  <script src="{%static 'js/script-cotizacion.js'%}"></script>
+{%endblock%}
